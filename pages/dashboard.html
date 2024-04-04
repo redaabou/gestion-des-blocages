@@ -1,0 +1,130 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <title>Gestion des blocages</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="container">
+        <h1>Student Dashboard</h1>
+        <p>Welcome, <span id="username">karim</span>!</p>
+        <h2 id="showData">Afficher</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Date de création</th>
+                    <th>Difficulté</th>
+                    <th>Validé</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>karim </td>
+                    <td>15/03/2024</td>
+                    <td><i class="fa-solid fa-eye" onclick="defficultePopup()"></i></td>
+                    <td class="not-validated">&#10060;</td>
+                    <td><i class="fa-regular fa-pen-to-square" onclick="openModifyPopup()"></i></td>
+                    <td><i class="fa-solid fa-trash-can" onclick="openModifyPopup()"></i></a></td>
+                </tr>
+                <tr>
+                    <td>Karim</td>
+                    <td>29/03/2024</td>
+                    <td><i class="fa-solid fa-eye" onclick="defficultePopup()"></i></td>
+                    <td class="validated">&#10004;</td>
+                    <td><i class="fa-regular fa-pen-to-square" onclick="openModifyPopup()"></i></td>
+                    <td><i class="fa-solid fa-trash-can" onclick="openModifyPopup()"></i></a></td>
+                </tr>
+                <!-- Add more rows as needed -->
+            </tbody>
+        </table>
+        <div class="Add">
+            <div class="btn-open-popup" onclick="togglePopup()">
+                <i class="fa-solid fa-circle-plus"></i>
+            </div>
+        </div>
+
+        <!-- comtainer for add popup -->
+        <div id="popupOverlay" class="overlay-container">
+            <div class="popup-box">
+                <div class="close-btn"><a class="close-btn fas fa-times" onclick="togglePopup()"></a></div>
+                <h2 style="color: #CE0033;">Ajoute</h2>
+                <form class="form-container">
+                    <label class="form-label" for="name">
+                        Formateur
+                    </label>
+                    <input class="form-input" type="text" placeholder="Text" id="name" name="name" required>
+                    <label class="form-label" for="name">
+                        Bootcamp
+                    </label>
+                    <input class="form-input" type="text" placeholder="Text" id="name" name="name" required>
+                    <label class="form-label" for="name">
+                        Titre
+                    </label>
+                    <input class="form-input" type="text" placeholder="Text" id="name" name="name" required>
+                    <label class="form-label" for="name">
+                        Brief
+                    </label>
+                    <input class="form-input" type="text" placeholder="Text" id="name" name="name" required>
+                    <label class="form-label" for="name">
+                        Le deficulter rencontré
+                    </label>
+                    <input class="form-input" type="text" placeholder="Text" id="name" name="name" required>
+                    <button class="btn-submit" type="submit">
+                        Ajouter
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- container for modify popup -->
+        <div id="modifyPopupOverlay" class="overlay-container">
+            <div class="popup-box">
+                <div class="close-btn"><a class="close-btn fas fa-times" onclick="openModifyPopup()"></a></div>
+                <h2 style="color: #CE0033;">Modifier</h2>
+                <form class="form-container">
+                    <label class="form-label" for="name">
+                        Titre
+                    </label>
+                    <input class="form-input" type="text" placeholder="Text" id="name" name="name" required>
+                    <label class="form-label" for="name">
+                        Brief
+                    </label>
+                    <input class="form-input" type="text" placeholder="Text" id="name" name="name" required>
+                    <label class="form-label" for="name">
+                        Le deficulter rencontré
+                    </label>
+                    <input class="form-input" type="text" placeholder="Text" id="name" name="name" required>
+                    <button class="btn-submit" type="submit">
+                        Sauvegarder
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- container for defficulte popup -->
+        <div id="defficultePopupOverlay" class="overlay-container">
+            <div class="popup-box">
+                <div class="close-btn"><a class="close-btn fas fa-times" onclick="defficultePopup()"></a></div>
+                <h2 style="color: #CE0033;">Difficulté</h2>
+                <form class="form-container">
+                    <label class="form-label" for="name">
+                        Le deficulter rencontré
+                    </label>
+                    <input class="form-input
+                    " type="text" placeholder="Text" id="name" name="name" required>
+                </form>
+
+
+                <script src=" ../js/script.js"></script>
+</body>
+
+</html>

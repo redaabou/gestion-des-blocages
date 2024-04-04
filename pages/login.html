@@ -1,0 +1,42 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Gestion des blocages</title>
+</head>
+
+<body>
+    <section>
+        <div class="container">
+            <div class="user signinBx">
+                <div class="imgBx">
+                    <img src="../images/registrations.jpg" alt="">
+                    <div class="welcome">
+                        <h2>Welcome Back</h2>
+                        <p>Just a couple of clicks and we start</p>
+                    </div>
+                </div>
+                <div class="formBx">
+                    <form action="login.php" method="POST">
+                        <h2 class="signinh2">Sign In</h2>
+                        <input type="text" name="username" placeholder="Nom d'utilisateur" required>
+                        <input type="password" name="password" placeholder="Mot de passe" required>
+                        <input type="submit" name="submit" value="Login">
+                        <p class="signup">Don't have an account ? <a class="signup-a" href="../pages/signup.html"
+                                onclick="toggleForm();">Sign Up</a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
