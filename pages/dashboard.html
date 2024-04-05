@@ -11,9 +11,19 @@
 </head>
 
 <body>
+    <!-- navbar -->
+    <nav>
+        <img class="logo" src="../images/logo.png" alt="">
+        <i class="fa-sharp fa-solid fa-right-from-bracket fa-rotate-180" style="color: #ce0033; padding: 50px;"></i>
+    </nav>
+
+    <div class="welcomeText">
+        <h1>Welcome Back, Reda</h1>
+        <p style="margin-top: -5px;">Track your blockages and solve them with your professor</p>
+    </div>
+
+
     <div class="container">
-        <h1>Student Dashboard</h1>
-        <p>Welcome, <span id="username">karim</span>!</p>
         <h2 id="showData">Afficher</h2>
         <table>
             <thead>
@@ -33,7 +43,7 @@
                     <td><i class="fa-solid fa-eye" onclick="defficultePopup()"></i></td>
                     <td class="not-validated">&#10060;</td>
                     <td><i class="fa-regular fa-pen-to-square" onclick="openModifyPopup()"></i></td>
-                    <td><i class="fa-solid fa-trash-can" onclick="openModifyPopup()"></i></a></td>
+                    <td><i class="fa-solid fa-trash-can"></i></a></td>
                 </tr>
                 <tr>
                     <td>Karim</td>
@@ -41,7 +51,7 @@
                     <td><i class="fa-solid fa-eye" onclick="defficultePopup()"></i></td>
                     <td class="validated">&#10004;</td>
                     <td><i class="fa-regular fa-pen-to-square" onclick="openModifyPopup()"></i></td>
-                    <td><i class="fa-solid fa-trash-can" onclick="openModifyPopup()"></i></a></td>
+                    <td><i class="fa-solid fa-trash-can"></i></a></td>
                 </tr>
                 <!-- Add more rows as needed -->
             </tbody>
@@ -122,9 +132,17 @@
                     <input class="form-input
                     " type="text" placeholder="Text" id="name" name="name" required>
                 </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <footer>
+        <p>© 2021 All rights reserved. Designed by Reda</p>
+    </footer>
 
 
-                <script src=" ../js/script.js"></script>
+    <script src=" ../js/script.js"></script>
 </body>
 
 </html>

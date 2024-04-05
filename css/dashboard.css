@@ -1,17 +1,53 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #ffffff;
-    margin: 0;
+    margin: 150px;
     padding: 0;
     display: flex;
-    justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
+/* navbar css */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 10px 20px;
+    width: 95%;
+    height: 10%;
+    position: fixed;
+    top: 13px;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 50px;
+}
+
+.logo img {
+    height: 186px;
+    margin-top: 21px;
+    margin-left: 18px;
+
+}
+
+img.logo {
+    height: 186px;
+    margin-top: 21px;
+    margin-left: 18px
+}
+
+.welcomeText {
+    display: flex;
+    flex-direction: column;
+    align-self: self-start;
+    margin-bottom: 25px;
+}
+
+/* container css */
 .container {
     background-color: white;
-    height: 50%;
-    width: 60%;
+    height: 100%;
+    width: 100%;
     margin: 0 auto;
     border-radius: 5px;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
@@ -46,7 +82,7 @@ th {
 }
 
 h1 {
-    color: #504DC1;
+    color: black;
 }
 
 #showData {
@@ -179,4 +215,19 @@ h1 {
 .overlay-container.show {
     display: flex;
     opacity: 1;
+}
+
+/* footer css */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 10px 20px;
+    width: 100%;
+    height: 5%;
+    position: fixed;
+    bottom: 0;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
 }
