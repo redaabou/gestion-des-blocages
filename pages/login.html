@@ -19,10 +19,12 @@
                     </div>
                 </div>
                 <div class="formBx">
-                    <form action="login.php" method="POST">
+                    <form id="loginForm">
                         <h2 class="signinh2">Sign In</h2>
-                        <input type="text" name="username" placeholder="Nom d'utilisateur" required>
-                        <input type="password" name="password" placeholder="Mot de passe" required>
+                        <label for="email">Email</label>
+                        <input id="email" type="email" name="email" placeholder="qwerty@gmail.com" required>
+                        <label for="password">Password</label>
+                        <input id="password" type="password" name="password" placeholder="*************" required>
                         <input type="submit" name="submit" value="Login">
                         <p class="signup">Don't have an account ? <a class="signup-a" href="../pages/signup.html"
                                 onclick="toggleForm();">Sign Up</a>
@@ -35,8 +37,9 @@
 
 
 
+    <script src="../js/script.js"></script>
+    <script src="../js/login.js"></script>
 
-    <script src="script.js"></script>
 </body>
 
 </html>

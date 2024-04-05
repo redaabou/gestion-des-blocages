@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/signup.css">
     <title>Gestion des blocages</title>
 </head>
 
@@ -19,13 +19,16 @@
                     </div>
                 </div>
                 <div class="formBx">
-                    <form action="login.php" method="POST">
+                    <form id="registerForm">
                         <h2 class="signuph2">Sing up</h2>
-                        <input type="text" name="username" placeholder="Nom d'utilisateur" required>
-                        <input type="password" name="password" placeholder="Mot de passe" required>
-                        <input type="password" name="password2" placeholder="Confirmer le mot de passe" required>
+                        <label for="username">Username</label>
+                        <input type="text" name="username" id="username" placeholder="username" required>
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" placeholder="qwerty@gmail.com" required>
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password" placeholder="*************" required>
                         <br>
-                        <input type="submit" name="submit" value="login">
+                        <input type="submit" name="submit" id="signUp" value="sign up">
                         <p class="signup">Already have an account ? <a class="signup-a" href="../pages/login.html"
                                 onclick="toggleForm();">Sign in</a>
                         </p>
@@ -35,7 +38,8 @@
         </div>
     </section>
 
-    <script src="script.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="../js/registration.js"></script>
 </body>
 
 </html>
