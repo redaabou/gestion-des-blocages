@@ -1,6 +1,7 @@
 // login function
 // Define the admin user object
 var adminUser = {
+    name: "Abdleaaziz",
     email: "admin@gmail.com",
     password: "1234",
 };
