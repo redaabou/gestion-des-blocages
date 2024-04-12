@@ -20,17 +20,17 @@
     </nav>
 
     <div class="welcomeText">
-        <h1>Welcome Back, Reda</h1>
+        <h1 id="user-name"></h1>
         <p style="margin-top: -5px;">Track your blockages and solve them with your professor</p>
     </div>
 
     <!-- table  -->
     <div class="container">
         <h2 id="showData">Afficher</h2>
-        <table>
+        <table id="table">
             <thead>
                 <tr>
-                    <th>Nom</th>
+                    <th>Formateur</th>
                     <th>Date de création</th>
                     <th>Difficulté</th>
                     <th class="thValide">Validé</th>
@@ -38,22 +38,12 @@
                     <th></th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="tableBody">
                 <tr>
-                    <td>karim </td>
-                    <td>15/03/2024</td>
-                    <td><i class="fa-solid fa-eye" onclick="defficultePopup()"></i></td>
-                    <td class="not-validated"><i class="fa-solid fa-square-xmark"></i></td>
-                    <td><i class="fa-regular fa-pen-to-square" onclick="openModifyPopup()"></i></td>
-                    <td><i class="fa-solid fa-trash-can"></i></a></td>
+
                 </tr>
                 <tr>
-                    <td>Karim</td>
-                    <td>29/03/2024</td>
-                    <td><i class="fa-solid fa-eye" onclick="defficultePopup()"></i></td>
-                    <td class="validated"><i class="fa-solid fa-square-check"></i></td>
-                    <td><i class="fa-regular fa-pen-to-square" onclick="openModifyPopup()"></i></td>
-                    <td><i class="fa-solid fa-trash-can"></i></a></td>
+
                 </tr>
                 <!-- Add more rows as needed -->
             </tbody>
@@ -63,97 +53,42 @@
                 <i class="fa-solid fa-circle-plus"></i>
             </div>
         </div>
-        <!-- 
-        <div id="wrapper">
-            <h1>Afficher</h1>
-            
-            <table id="keywords" cellspacing="0" cellpadding="0">
-              <thead>
-                <tr>
-                  <th><span>Nom</span></th>
-                  <th><span>Date de création</span></th>
-                  <th><span>Difficulté</span></th>
-                  <th><span>Validé</span></th>
-                  <th><span>Rank</span></th>
-                  <th><span>Rank</span></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td class="lalign">karim </td>
-                  <td>29/03/2024</td>
-                  <td><i class="fa-solid fa-eye" onclick="defficultePopup()"></i></td>
-                  <td class="validated"><i class="fa-solid fa-square-check"></i></td>
-                  <td><i class="fa-regular fa-pen-to-square" onclick="openModifyPopup()"></i></td>
-                  <td><i class="fa-solid fa-trash-can"></i></a></td>
-                </tr>
-                <tr>
-                  <td class="lalign">Reda </td>
-                  <td>29/03/2024</td>
-                  <td><i class="fa-solid fa-eye" onclick="defficultePopup()"></i></td>
-                  <td class="not-validated"><i class="fa-solid fa-square-xmark"></i></td>
-                  <td><i class="fa-regular fa-pen-to-square" onclick="openModifyPopup()"></i></td>
-                  <td><i class="fa-solid fa-trash-can"></i></a></td>
-                </tr>
-                <tr>
-                    <td class="lalign">Ayman </td>
-                  <td>29/03/2024</td>
-                  <td><i class="fa-solid fa-eye" onclick="defficultePopup()"></i></td>
-                  <td class="validated"><i class="fa-solid fa-square-check"></i></td>
-                  <td><i class="fa-regular fa-pen-to-square" onclick="openModifyPopup()"></i></td>
-                  <td><i class="fa-solid fa-trash-can"></i></a></td>
-                </tr>
-                <tr>
-                   <td class="lalign">oussama </td>
-                  <td>29/03/2024</td>
-                  <td><i class="fa-solid fa-eye" onclick="defficultePopup()"></i></td>
-                  <td class="not-validated"><i class="fa-solid fa-square-xmark"></i></td>
-                  <td><i class="fa-regular fa-pen-to-square" onclick="openModifyPopup()"></i></td>
-                  <td><i class="fa-solid fa-trash-can"></i></a></td>
-                </tr>
-                <tr>
-                   <td class="lalign">Sara </td>
-                  <td>29/03/2024</td>
-                  <td><i class="fa-solid fa-eye" onclick="defficultePopup()"></i></td>
-                  <td class="validated"><i class="fa-solid fa-square-check"></i></td>
-                  <td><i class="fa-regular fa-pen-to-square" onclick="openModifyPopup()"></i></td>
-                  <td><i class="fa-solid fa-trash-can"></i></a></td>
-                </tr>
-              </tbody>
-            </table>
-             <div class="Add">
-            <div class="btn-open-popup" onclick="togglePopup()">
-                <i class="fa-solid fa-circle-plus"></i>
-            </div>
-        </div>
-           </div>  -->
+
 
         <!-- comtainer for add popup -->
         <div id="popupOverlay" class="overlay-container">
             <div class="popup-box">
                 <div class="close-btn"><a class="close-btn fas fa-times" onclick="togglePopup()"></a></div>
                 <h2 style="color: #CE0033;">Ajoute</h2>
-                <form class="form-container">
-                    <label class="form-label" for="name">
+                <form id="addRowToTable" class="form-container">
+                    <label class="form-label" for="formateur">
                         Formateur
                     </label>
-                    <input class="form-input" type="text" placeholder="Text" id="name" name="name" required>
-                    <label class="form-label" for="name">
-                        Bootcamp
-                    </label>
-                    <input class="form-input" type="text" placeholder="Text" id="name" name="name" required>
-                    <label class="form-label" for="name">
-                        Titre
-                    </label>
-                    <input class="form-input" type="text" placeholder="Text" id="name" name="name" required>
-                    <label class="form-label" for="name">
+
+                    <select name="formateur" id="formateur">
+                        <option value="reda">Reda</option>
+                        <option value="abdlazize">abdlazize</option>
+                        <option value="aymane">Aymane</option>
+                        <option value="oussama">Oussama</option>
+                    </select>
+
+                    <label class="form-label" for="brief">
                         Brief
                     </label>
-                    <input class="form-input" type="text" placeholder="Text" id="name" name="name" required>
-                    <label class="form-label" for="name">
+                    <input class="form-input" type="text" placeholder="Text" id="brief" name="brief" required>
+
+                    <label class="form-label" for="defficulte">
                         Le deficulter rencontré
                     </label>
-                    <input class="form-input" type="text" placeholder="Text" id="name" name="name" required>
+
+                    <textarea class="form-input" name="defficulte" id="deficulterRencontre" cols="30" rows="5"
+                        placeholder="Text" required></textarea>
+
+                    <label class="form-label" for="date">
+                        Date de creation
+                    </label>
+                    <input class="form-input" type="date" placeholder="Text" id="date" name="name" required>
+
                     <button class="btn-submit" type="submit">
                         Ajouter
                     </button>
@@ -167,18 +102,23 @@
                 <div class="close-btn"><a class="close-btn fas fa-times" onclick="openModifyPopup()"></a></div>
                 <h2 style="color: #CE0033;">Modifier</h2>
                 <form class="form-container">
-                    <label class="form-label" for="name">
-                        Titre
+                    <label class="form-label" for="formateur">
+                        Formateur
                     </label>
-                    <input class="form-input" type="text" placeholder="Text" id="name" name="name" required>
-                    <label class="form-label" for="name">
+                    <input class="form-input" type="text" placeholder="Text" id="modiFormateur" name="formateur"
+                        required>
+                    <label class="form-label" for="brief">
                         Brief
                     </label>
-                    <input class="form-input" type="text" placeholder="Text" id="name" name="name" required>
-                    <label class="form-label" for="name">
+                    <input class="form-input" type="text" placeholder="Text" id="modiBrief" name="brief" required>
+                    <label class="form-label" for="difiRenco">
                         Le deficulter rencontré
                     </label>
-                    <input class="form-input" type="text" placeholder="Text" id="name" name="name" required>
+                    <input class="form-input" type="text" placeholder="Text" id="modiDifi" name="difiRenco" required>
+                    <label class="form-label" for="date">
+                        Date de creation
+                    </label>
+                    <input class="form-input" type="date" placeholder="Text" id="modiDate" name="date" required>
                     <button class="btn-submit" type="submit">
                         Sauvegarder
                     </button>
@@ -188,17 +128,7 @@
 
         <!-- container for defficulte popup -->
         <div id="defficultePopupOverlay" class="overlay-container">
-            <div class="popup-box">
-                <div class="close-btn"><a class="close-btn fas fa-times" onclick="defficultePopup()"></a></div>
-                <h2 style="color: #CE0033;">Difficulté</h2>
-                <form class="form-container">
-                    <label class="form-label" for="name">
-                        Le deficulter rencontré
-                    </label>
-                    <input class="form-input
-                    " type="text" placeholder="Text" id="name" name="name" required>
-                </form>
-            </div>
+
         </div>
     </div>
 
@@ -209,7 +139,7 @@
 
 
     <script src=" ../js/script.js"></script>
-    <script src="../js/dashboard.js"></script>
+    <script src="../js/registration.js"></script>
     <script src="../js/login.js"></script>
 </body>
 

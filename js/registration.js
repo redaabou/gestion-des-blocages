@@ -8,7 +8,7 @@ function register(event) {
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;
 
-    var newStudent = {
+    var newUser = {
         ID: users.length + 1,
         username: username,
         email: email,
@@ -17,33 +17,47 @@ function register(event) {
         role: "student",
     };
 
-    // users.push(newStudent);
-
-    // localStorage.setItem("users", JSON.stringify(users));
-
-    if (users.some((v) => {
-        return v.email === email;
-    })) {
+    // Check if email already exists for another user
+    if (users.some((user) => user.email === email)) {
         alert("Email already exists");
         return;
-    } else {
-        users.push(newStudent);
-        localStorage.setItem("users", JSON.stringify(users));
     }
 
-    alert("Hello " + username + " your registration is successful!");
+    users.push(newUser);
+
+    // Save the user's data individually
+    localStorage.setItem("user_" + newUser.ID, JSON.stringify(newUser));
+
+    alert("Hello " + username + ", your registration is successful!");
 
     window.location.href = "login.html";
 }
 
-document.getElementById("registerForm").addEventListener("submit", register);
+document.addEventListener("DOMContentLoaded", function () {
+    var registerForm = document.getElementById("registerForm");
+    if (registerForm) {
+        registerForm.addEventListener("submit", register);
+    }
+});
 
+var currentUserId = getCurrentUserId();
 
+function getCurrentUserId() {
+    // Get the logged in user's email from local storage
+    var loggedInUserEmail = localStorage.getItem("loggedInUserEmail");
 
-// logout function
-function logout() {
-    localStorage.removeItem("currentUser");
-    window.location.href = "login.html";
+    if (loggedInUserEmail) {
+        // Find the user based on the logged in user's email
+        var userKeys = Object.keys(localStorage);
+        for (var i = 0; i < userKeys.length; i++) {
+            if (userKeys[i].startsWith("user_")) {
+                var userData = JSON.parse(localStorage.getItem(userKeys[i]));
+                if (userData.email === loggedInUserEmail) {
+                    return userData.ID;
+                }
+            }
+        }
+    }
+
+    return null;
 }
-
-document.getElementById("logout").addEventListener("click", logout);
