@@ -277,3 +277,30 @@ footer {
     opacity: 0;
     transition: opacity 0.3s ease;
 }
+
+/* Animation for popup */
+#popup-window.show {
+    display: flex;
+    opacity: 1;
+}
+
+.popup-box-admin {
+    background: #fff;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    width: 320px;
+    text-align: center;
+    opacity: 0;
+    transform: scale(0.8);
+    animation: fadeInUp 0.5s ease-out forwards;
+    margin-bottom: 40px;
+    scrollbar-width: thin;
+    scrollbar-color: grey white;
+}
+
+#checked {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 20px;
+}
