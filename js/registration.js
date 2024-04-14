@@ -25,6 +25,9 @@ function register(event) {
 
     users.push(newUser);
 
+    // Save the users array to local storage
+    localStorage.setItem("users", JSON.stringify(users));
+
     // Save the user's data individually
     localStorage.setItem("user_" + newUser.ID, JSON.stringify(newUser));
 
