@@ -345,12 +345,12 @@ footer {
 #btnValide button {
     padding: 12px 24px;
     font-size: 18px;
-    color: rgb(255 255 255);
+    color: white;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     margin-left: 30px;
-    background-color: #ce0033;
+    background-color: #504dc1;
 }
 
 #btnValide button:hover {

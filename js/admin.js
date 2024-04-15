@@ -20,7 +20,7 @@ allDificulties.forEach((dificultie, index) => {
     trEl.innerHTML = `
         <td>${dificultie.username}</td>
         <td>${dificultie.date}</td>
-        <td id="popup-link"><i class="fa-solid fa-eye"></i><a/></td>
+        <td id="popup-link"><i onClick="showPopup(${dificultie.id})" class="fa-solid fa-eye"></i><a/></td>
         <td id="checked">
         <i ${dificultie.formateurIsValide == false ? `class="fa-solid fa-square-xmark"` : `class= "fa-solid fa-square-check"`}"></i>
         </td>
@@ -29,9 +29,9 @@ allDificulties.forEach((dificultie, index) => {
     `;
     tbodyEla.appendChild(trEl);
 
-    // Add click event listener to the row
-    const popupLink = trEl.querySelector("#popup-link");
-    popupLink.addEventListener('click', () => showPopup());
+    // // Add click event listener to the row
+    // const popupLink = trEl.querySelector("#popup-link");
+    // popupLink.addEventListener('click', () => showPopup());
 
 
 });
@@ -48,7 +48,7 @@ function showCommentPopup(id) {
     <h2 style="color: #CE0033; margin-bottom: 50px;">Modal</h2>
     <div class="secInput">
             <div>
-                <input type="radio" checked name="radio0" id="radio" value="Encadré dans leurs recherches de solutions"> <label for="radio1" id="radio0">Encadré dans leurs recherches de solutions</label>
+                <input type="radio" checked name="radio1" id="radio" value="Encadré dans leurs recherches de solutions"> <label for="radio1" id="radio1">Encadré dans leurs recherches de solutions</label>
              </div>
              <div>
                  <input type="radio" name="radio1" id="radio" value="Aidé par leurs pairs"> <label for="radio1" id="radio1">Aidé par leurs pairs</label>
@@ -71,34 +71,68 @@ function showCommentPopup(id) {
 </div>`
 }
 
+// get radio value
+let radio = document.querySelectorAll('#radio');
+let valueRadio
+radio.forEach((item) => item.addEventListener('change', function (e) {
+
+    valueRadio = e.target.value;
+    console.log(valueRadio);
+}));
+
+let input = document.querySelector('.solution');
+
+input.addEventListener('change', inputChange);
+let valueInput = "";
+function inputChange(e) {
+
+    valueInput = e.target.value;
+    return valueInput;
+}
+
+
+
 function valide(id) {
-    document.querySelector('.fa-square-xmark').classList = "fa-solid fa-square-check";
+
+    console.log(inputChange());
     let dificulties = JSON.parse(localStorage.getItem("dificultie"));
     let dificultie = dificulties.find((dificultie) => dificultie.id === id);
+
+    console.log(valueRadio);
+    document.querySelector('.fa-square-xmark').classList = "fa-solid fa-square-check";
+    dificultie.deficulterRencontre = valueRadio;
+
     dificultie.isValide = true;
     dificultie.formateurIsValide = true;
     localStorage.setItem("dificultie", JSON.stringify(dificulties));
 
+
 }
 
 
+
+
 // show difficulty popup
-function showPopup() {
+function showPopup(id) {
+
+    let dificulties = JSON.parse(localStorage.getItem("dificultie"));
+    let dificultie = dificulties.find((dificultie) => dificultie.id === id);
+    console.log(dificulties);
 
     const popupWindow = document.getElementById("popup-window");
     popupWindow.classList.toggle('show');
     popupWindow.innerHTML = ''; // Clear the popup window content
-    allDificulties.forEach((blocage, index) => {
 
-        popupWindow.innerHTML += `<div id="modifyd" class="popup-box-admin">
+
+    popupWindow.innerHTML += `<div id="modifyd" class="popup-box-admin">
     <div class="close-btn"><a class="close-btn fas fa-times" onclick="closePopup()"></a></div>
     <h2 style="color: #CE0033;">Difficulté</h2>
     <textarea style= "width:100%; height:50px;" id="popup-content" class="popup-content" placeholder="Difficulté rencontrée">
-    ${blocage.deficulterRencontre}
+    ${dificultie.deficulterRencontre}
     </textarea>
     </div>
     </div>`
-    });
+
 }
 
 function closePopup() {
