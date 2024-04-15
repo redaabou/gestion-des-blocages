@@ -34,65 +34,21 @@ allDificulties.forEach((dificultie, index) => {
     popupLink.addEventListener('click', () => showPopup());
 
 
-    // Add change event listener to the checkbox
-    // const checkbox = trEl.querySelector(`#blockUser${index}`);
-    // checkbox.addEventListener('change', (event) => {
-    //     if (event.target.checked) {
-    //         // If checkbox is checked, perform action
-    //         // For example: Call a function to block the user
-    //         blockUser(user);
-    //         checkbox.checked = true;
-    //         // Save the user's data individually
-    //         localStorage.setItem("user_" + user.ID, JSON.stringify(user));
-
-    //         // Save the user's data in the users array
-    //         users[index].blocked = true;
-
-    //         // Save the users array to local storage
-    //         localStorage.setItem("users", JSON.stringify(users));
-
-    //     } else {
-    //         // If checkbox is unchecked, perform action
-    //         // For example: Call a function to unblock the user
-    //         unblockUser(user);
-    //         checkbox.checked = false;
-    //         // Save the user's data individually
-    //         localStorage.setItem("user_" + user.ID, JSON.stringify(user));
-
-    //         // Save the user's data in the users array
-    //         users[index].blocked = false;
-
-    //         // Save the users array to local storage
-    //         localStorage.setItem("users", JSON.stringify(users));
-    //     }
-    // });
 });
 
-// function blockUser(user) {
-//     // Code to block the user
-//     console.log(`Blocking user: ${user.username}`);
-// }
 
-// function unblockUser(user) {
-//     // Code to unblock the user
-//     console.log(`Unblocking user: ${user.username}`);
-// }
 
 // show comment popup
-
-
-
-
 function showCommentPopup(id) {
     const popupWindow = document.getElementById("popup-window");
     popupWindow.classList.toggle('show');
     popupWindow.innerHTML = ''; // Clear the popup window content
     popupWindow.innerHTML = `<div id="modifyd" class="popup-box-admin">
     <div class="close-btn"><a class="close-btn fas fa-times" onclick="closePopup()"></a></div>
-    <h2 style="color: #CE0033;">Commentaires</h2>
+    <h2 style="color: #CE0033; margin-bottom: 50px;">Modal</h2>
     <div class="secInput">
             <div>
-                <input type="radio" checked name="radio1" id="radio" value="Encadré dans leurs recherches de solutions"> <label for="radio1" id="radio1">Encadré dans leurs recherches de solutions</label>
+                <input type="radio" checked name="radio0" id="radio" value="Encadré dans leurs recherches de solutions"> <label for="radio1" id="radio0">Encadré dans leurs recherches de solutions</label>
              </div>
              <div>
                  <input type="radio" name="radio1" id="radio" value="Aidé par leurs pairs"> <label for="radio1" id="radio1">Aidé par leurs pairs</label>
@@ -105,7 +61,7 @@ function showCommentPopup(id) {
                  <p class="errSolution"></p>
               </div>
 
-              <div class="btn">
+              <div class="btn" id="btnValide">
               <button class="btnModel " id="validePopupModel" onClick="valide(${id})">valide</button>
            
           </div>

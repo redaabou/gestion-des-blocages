@@ -29,9 +29,6 @@ function register(event) {
     // Save the users array to local storage
     localStorage.setItem("users", JSON.stringify(users));
 
-    // Save the user's data individually
-    // localStorage.setItem("user_" + newUser.ID, JSON.stringify(newUser));
-
     alert("Hello " + username + ", your registration is successful!");
 
     window.location.href = "login.html";

@@ -309,3 +309,54 @@ footer {
 .fa-square-check {
     color: green !important;
 }
+
+.secInput {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 9px;
+
+}
+
+.secInput div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+#radio1 {
+    margin-left: 25px;
+}
+
+.solution {
+    margin-left: 21px;
+    margin-bottom: -2px;
+    width: 286px;
+    height: 90px;
+
+}
+
+#btnValide {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#btnValide button {
+    padding: 12px 24px;
+    font-size: 18px;
+    color: rgb(255 255 255);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-left: 30px;
+    background-color: #ce0033;
+}
+
+#btnValide button:hover {
+    background-color: #CE0033;
+}
+
+#radio0 {
+    margin-left: -11px;
+}
