@@ -99,7 +99,8 @@
         <!-- container for modify popup -->
         <div id="modifyPopupOverlay" class="overlay-container">
             <div class="popup-box">
-                <div class="close-btn"><a class="close-btn fas fa-times" onclick="openModifyPopup()"></a></div>
+                <div class="close-btn"><a id="close" class="close-btn fas fa-times"></a>
+                </div>
                 <h2 style="color: #CE0033;">Modifier</h2>
                 <form class="form-container">
                     <label class="form-label" for="formateur">
@@ -119,7 +120,7 @@
                         Date de creation
                     </label>
                     <input class="form-input" type="date" placeholder="Text" id="modiDate" name="date" required>
-                    <button class="btn-submit" type="submit">
+                    <button id="change" class="btn-submit" type="submit">
                         Sauvegarder
                     </button>
                 </form>

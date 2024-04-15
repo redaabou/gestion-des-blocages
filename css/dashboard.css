@@ -297,10 +297,15 @@ footer {
     margin-bottom: 40px;
     scrollbar-width: thin;
     scrollbar-color: grey white;
+    margin-left: 8px;
 }
 
 #checked {
     display: flex;
     justify-content: flex-start;
     margin-left: 20px;
+}
+
+.fa-square-check {
+    color: green !important;
 }

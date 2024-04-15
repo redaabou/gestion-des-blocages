@@ -14,6 +14,7 @@ function register(event) {
         email: email,
         password: password,
         blocages: [],
+        blocked: false,
         role: "student",
     };
 
@@ -29,11 +30,13 @@ function register(event) {
     localStorage.setItem("users", JSON.stringify(users));
 
     // Save the user's data individually
-    localStorage.setItem("user_" + newUser.ID, JSON.stringify(newUser));
+    // localStorage.setItem("user_" + newUser.ID, JSON.stringify(newUser));
 
     alert("Hello " + username + ", your registration is successful!");
 
     window.location.href = "login.html";
+
+
 }
 
 document.addEventListener("DOMContentLoaded", function () {
