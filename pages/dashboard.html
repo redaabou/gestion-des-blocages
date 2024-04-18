@@ -14,19 +14,26 @@
 <body>
     <!-- navbar -->
     <nav>
-        <img class="logo" src="../images/logo.png" alt="">
-        <i onclick="logout();" class="fa-sharp fa-solid fa-right-from-bracket fa-rotate-180"
+        <img class="logo" src="../images/Blue Beige Bright Study Blog Logo  (2).png" alt="">
+        <i onclick="logout();" class="fa-sharp fa-solid fa-right-from-bracket fa-rotate-360"
             style="color: #ce0033; padding: 50px;"></i>
     </nav>
 
     <div class="welcomeText">
         <h1 id="user-name"></h1>
-        <p style="margin-top: -5px;">Track your blockages and solve them with your professor</p>
+        <p style="    margin-top: -39px;
+        font-size: large;
+        background-color: #ffffff75;">Track your blockages and solve them with your professor</p>
     </div>
 
     <!-- table  -->
     <div class="container">
         <h2 id="showData">Afficher</h2>
+        <div class="Add">
+            <div class="btn-open-popup" onclick="togglePopup()">
+                <p>Ajouter Difficulté</p><i class="fa-solid fa-circle-plus"></i>
+            </div>
+        </div>
         <table id="table">
             <thead>
                 <tr>
@@ -48,11 +55,7 @@
                 <!-- Add more rows as needed -->
             </tbody>
         </table>
-        <div class="Add">
-            <div class="btn-open-popup" onclick="togglePopup()">
-                <i class="fa-solid fa-circle-plus"></i>
-            </div>
-        </div>
+
 
 
         <!-- comtainer for add popup -->
@@ -135,8 +138,15 @@
 
     <!-- footer -->
     <footer>
-        <p>© 2021 All rights reserved. Designed by Reda</p>
+        <p>© 2024 All rights reserved. Designed by Reda</p>
     </footer>
+
+    <div id="popup-window" class="overlay-container">
+
+
+    </div>
+
+
 
 
     <script src=" ../js/script.js"></script>

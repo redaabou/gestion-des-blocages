@@ -1,6 +1,10 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #ffffff;
+    background-image: url("../images/painting-set-table.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+
     margin: 150px;
     padding: 0;
     display: flex;
@@ -15,7 +19,7 @@ nav {
     align-items: center;
     background-color: white;
     padding: 10px 20px;
-    width: 95%;
+    width: 88%;
     height: 10%;
     position: fixed;
     top: 13px;
@@ -46,7 +50,6 @@ img.logo {
 /* container css */
 .container {
     background-color: white;
-    height: 100%;
     width: 100%;
     margin: 0 auto;
     border-radius: 5px;
@@ -106,6 +109,11 @@ h1 {
     margin-left: 22px;
 }
 
+i.fa-solid.fa-circle-plus {
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
 #modifyd .popup-content {
     display: flex;
     flex-direction: column;
@@ -139,6 +147,7 @@ h1 {
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    display: flex;
 }
 
 .overlay-container {
@@ -369,9 +378,9 @@ footer {
     transform: translate(-50%, -50%);
     background-color: #ffffff;
     padding: 20px;
-    border: 1px solid #000000;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
     z-index: 9999;
+    border-radius: 21px;
 }
 
 .container1 {
@@ -399,4 +408,58 @@ footer {
     cursor: not-allowed;
     color: #858585;
     pointer-events: none;
+}
+
+#alginModal {
+    display: flex;
+
+}
+
+.titleModel {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#alignTitre {
+    display: flex;
+}
+
+div.btn {
+    display: flex;
+    justify-content: center;
+}
+
+
+.btnModel {
+    background-color: #504DC1;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#aficherSolution {
+    display: none;
+}
+
+.background {
+    display: none;
+    /* Initially hidden */
+    position: fixed;
+    /* Fixed position */
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    top: 0;
+    /* Position at the top */
+    left: 0;
+    /* Position at the left */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Black background with opacity */
+    z-index: 9998;
+    /* Under the popup */
 }

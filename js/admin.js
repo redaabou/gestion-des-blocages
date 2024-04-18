@@ -16,7 +16,6 @@ var tbodyEla = document.getElementById("tableBodyA");
 tbodyEla.innerHTML = "";
 allDificulties.forEach((dificultie, index) => {
     var trEl = document.createElement("tr");
-    console.log(dificultie);
     trEl.innerHTML = `
         <td>${dificultie.username}</td>
         <td>${dificultie.date}</td>
@@ -29,10 +28,6 @@ allDificulties.forEach((dificultie, index) => {
     `;
     tbodyEla.appendChild(trEl);
 
-    // // Add click event listener to the row
-    // const popupLink = trEl.querySelector("#popup-link");
-    // popupLink.addEventListener('click', () => showPopup());
-
 
 });
 
@@ -40,15 +35,21 @@ allDificulties.forEach((dificultie, index) => {
 
 
 
+background = document.querySelector(".background")
 // Function to open the popup
 function openPopupModel(x) {
+
+    background.style.display = "block";
     document.querySelector(".btnModel").addEventListener("click", () => addModol(x))
     document.getElementById("popupModel").style.display = "block";
+
+
 }
 
 // Function to close the popup
 function closePopupModel() {
     document.getElementById("popupModel").style.display = "none";
+
 }
 
 // Event listener for closing the popup
@@ -61,7 +62,6 @@ let valueRadio
 radio.forEach((item) => item.addEventListener('change', function (e) {
 
     valueRadio = e.target.value;
-    console.log(valueRadio);
 }));
 
 let input = document.querySelector('.solution');
@@ -85,30 +85,12 @@ function addModol(x) {
     studentModelBrief.isDisabled = true
     localStorage.setItem("dificultie", JSON.stringify(allDificulties))
     document.querySelector(".errSolution").style.display = "none"
-    //document.getElementById("popupModel").style.display = "none";
-    // solutionVal.value =""
+
     window.location.reload()
 
 }
 
 
-
-// function valide(id) {
-
-//     console.log(inputChange());
-//     let dificulties = JSON.parse(localStorage.getItem("dificultie"));
-//     let dificultie = dificulties.find((dificultie) => dificultie.id === id);
-
-//     console.log(valueRadio);
-//     document.querySelector('.fa-square-xmark').classList = "fa-solid fa-square-check";
-//     dificultie.deficulterRencontre = valueRadio;
-
-//     dificultie.isValide = true;
-//     dificultie.formateurIsValide = true;
-//     localStorage.setItem("dificultie", JSON.stringify(dificulties));
-
-
-// }
 
 
 
@@ -118,7 +100,6 @@ function showPopup(id) {
 
     let dificulties = JSON.parse(localStorage.getItem("dificultie"));
     let dificultie = dificulties.find((dificultie) => dificultie.id === id);
-    console.log(dificulties);
 
     const popupWindow = document.getElementById("popup-window");
     popupWindow.classList.toggle('show');
@@ -128,15 +109,23 @@ function showPopup(id) {
     popupWindow.innerHTML += `<div id="modifyd" class="popup-box-admin">
     <div class="close-btn"><a class="close-btn fas fa-times" onclick="closePopup()"></a></div>
     <h2 style="color: #CE0033;">Difficulté</h2>
+    <h3 id:"alignTitre" style="
+    display: flex;"> Difficulté rencontrée:</h3>
     <p style= "width:100%; height:50px;" id="popup-content" class="popup-content" placeholder="Difficulté rencontrée">
     ${dificultie.deficulterRencontre}
     </p>
+
+    <div id="aficherSolution" ${dificultie.formateurIsValide == true ? `style= "display:block;"` : ""}>
+    <h3 id:"alignTitre" style="display: flex;"> Modalité de formation:</h3>
     <p style= "width:100%; height:50px;" id="popup-content" class="popup-content" placeholder="Difficulté rencontrée">
     ${dificultie.typeModel}
     </p>
+
+    <h3 id:"alignTitre" style="display: flex;"> Solution proposée:</h3>
     <p style= "width:100%; height:50px;" id="popup-content" class="popup-content" placeholder="Difficulté rencontrée">
     ${dificultie.modal}
     </p>
+    </div>
     
     </div>
     </div>`
@@ -148,6 +137,11 @@ function closePopup() {
     popupWindow.classList.remove('show');
 }
 
+function closePopupSolution() {
+    document.getElementById("popupModel").style.display = "none";
+    background.style.display = "none";
+}
+
 
 
 
@@ -156,4 +150,3 @@ function logout() {
     localStorage.removeItem("currentUser");
     window.location.href = "login.html";
 }
-
